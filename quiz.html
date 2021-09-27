@@ -1,0 +1,66 @@
+<html>
+<head>
+    <style>
+        body{
+            background-color: pink;
+        }
+        h1{
+            color: white;
+            font-weight: bold;
+        }
+        button{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>How much do you use technology quiz?</h1>
+<p>Do you use a computational device to do the following:</p>
+<input type="checkbox" id="1" name="thisChecked" value="1"></checkbox><label>As an alarm</label>
+<br>
+<br>
+<input type="checkbox" id="2" name="thisChecked" value="1"></checkbox><label>To talke to someone</label>
+<br>
+<br>
+<input type="checkbox" id="3" name="thisChecked" value="1"></checkbox><label>To take notes</label>
+<br>
+<br>
+<input type="checkbox" id="4" name="thisChecked" value="1"></checkbox><label>To set a reminder</label>
+<br>
+<br>
+<input type="checkbox" id="5" name="thisChecked" value="1"></checkbox><label>To listen to music</label>
+<br>
+<br>
+<input type="checkbox" id="6" name="thisChecked" value="1"></checkbox><label>To get food delivered</label>
+<br>
+<br>
+<input type="checkbox" id="7" name="thisChecked" value="1"></checkbox><label>To track something</label>
+<br>
+<br>
+<button type="button" id="clickCheck" name="clickCheck" onClick = "getCount();">Submit</button>
+</body>
+<script>
+    function getCount()
+    {
+        var total = 0;
+        var numberChecked = document.getElementsByName("thisChecked");
+        for(var i=0; i<numberChecked.length; i++){
+            if(numberChecked[i].type === "checkbox" && numberChecked[i].checked === true)
+            {
+                total++;
+            }
+        }
+        if(total == 7){
+            alert(total + ", you're practically a cyborg.");
+        }
+        else if(total == 6 || total ==5)
+        {
+            alert(total + ", you're getting close to cyborg territory.");
+        }
+        else {
+            alert(total + ", not close to cyborg...yet.");
+        }
+    }    
+</script>
+</html>
+
